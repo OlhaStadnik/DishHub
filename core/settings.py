@@ -102,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = "accounts.User"
+AUTH_USER_MODEL = "accounts.CookUser"
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

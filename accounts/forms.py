@@ -4,4 +4,5 @@ from .models import CookUser
 class RegisterForm(UserCreationForm):
     class Meta:
         model = CookUser
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = UserCreationForm.Meta.fields + ('email', 'years_of_experience',)
+

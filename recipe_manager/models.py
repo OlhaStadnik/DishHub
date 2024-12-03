@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
@@ -19,4 +18,4 @@ class Dish(models.Model):
 
     def __str__(self):
         return (f"{self.dish_type}: "
-                f"{self.name}( {self.price}) {self.description} - {self.cooks}") #self.name
+                f"{self.name}( {self.price}) {self.description} - {self.cooks.name}") #self.name

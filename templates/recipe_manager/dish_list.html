@@ -3,8 +3,8 @@
 
 {% block content %}
   <h1>
-    Список типів страв
-    <a href="{% url 'recipe_manager:dish-type-create' %}"
+    Список страв
+    <a href="{% url 'recipe_manager:dish-create' %}"
        class="btn btn-primary link-to-page">
       Створити
     </a>
@@ -39,7 +39,11 @@
             {{ dish.price }}
           </td>
           <td>
-            {{ dish.cooks}}
+            <ul>
+            {% for cook in dish.cooks.all %}
+              <li><a href="{% url 'accounts:profile' cook.id %}">{{ cook.username }}</a></li>
+            {% endfor %}
+            </ul>
           </td>
           <td>
             <a href="{% url 'recipe_manager:dish-update' pk=dish.id %}">

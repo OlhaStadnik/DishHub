@@ -2,9 +2,9 @@
 
 {% block content %}
 <h2>Profile</h2>
-<p><strong>Username:</strong> {{ request.c }}</p>
-<p><strong>Email:</strong> {{ request.user.email }}</p>
-<p><strong>Years of Experience:</strong> {{ request.user.years_of_experience }}</p>
+<p><strong>Username:</strong> {{ user.username }}</p>
+<p><strong>Email:</strong> {{ user.email }}</p>
+<p><strong>Years of Experience:</strong> {{ user.years_of_experience }}</p>
 
-<a href="{% url 'update_profile' %}" class="btn btn-secondary">Edit Profile</a>
+<a href="#" class="btn btn-secondary">Edit Profile</a>
 {% endblock %}

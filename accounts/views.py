@@ -7,7 +7,12 @@ from django.views.generic import FormView, CreateView, UpdateView, DetailView
 from django.urls import reverse_lazy
 from .forms import RegisterForm
 from .models import CookUser
+from django.contrib.auth import get_user_model
 
+
+class CookUserListView(LoginRequiredMixin, generic.ListView):
+    model = CookUser
+    template_name = "accounts/cook_list.html"
 
 class CookUserRegisterView(CreateView):
     model = CookUser
@@ -31,6 +36,8 @@ class CookUserUpdateView(LoginRequiredMixin, UpdateView):
         return self.request.user
 
 class CookUserDetailView(LoginRequiredMixin, generic.DetailView):
-    model = CookUser
-    queryset = CookUser.objects.prefetch_related("dishes") # список страв
+    model = get_user_model()
+    template_name = "accounts/profile.html"
+    context_object_name = "user"
+    # queryset = CookUser.objects.prefetch_related("dishes") # список страв
 

@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import View
 
+from recipe_manager.forms import DishCreateForm
 from recipe_manager.models import DishType, Dish
 
 class HomeView(generic.TemplateView):
@@ -44,7 +45,7 @@ class DishListView(generic.ListView):
     model = Dish
     template_name = "recipe_manager/dish_list.html"
     context_object_name = "dishes"
-    queryset = Dish.objects.all()
+    queryset = Dish.objects.all().prefetch_related("cooks")
     paginate_by = 5
 
 
@@ -52,16 +53,18 @@ class DishDetailView(generic.DetailView):
     model = Dish
     template_name = "recipe_manager/dish_detail.html"
     context_object_name = "dish"
+    
+    
 
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish
-    fields = ["name", "description", "dish_type", "price"]
+    fields = ["name", "description", "dish_type", "price", "cooks"]
     template_name = "recipe_manager/dish_form.html"
     success_url = reverse_lazy("recipe_manager:dish-list")
 
 class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Dish
-    fields = ["name", "description", "dish_type", "price"]
+    fields = ["name", "description", "dish_type", "price", "cooks"]
     template_name = "recipe_manager/dish_form.html"
     success_url = reverse_lazy("recipe_manager:dish-list")
 

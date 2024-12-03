@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from models import DishType, Dish
+from .models import DishType, Dish
 
 
 class DishCreateForm(forms.ModelForm):
@@ -8,6 +8,11 @@ class DishCreateForm(forms.ModelForm):
         queryset=DishType.objects.all(),
         widget=forms.Select,
         required=False #?
+    )
+    cooks = forms.ModelMultipleChoiceField(
+        queryset=get_user_model().objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
     )
 
     class Meta:

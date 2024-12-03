@@ -1,0 +1,284 @@
+[
+    {
+        "model": "recipe_manager.dishtype",
+        "pk": 1,
+        "fields": {
+            "name": "Салати"
+        }
+    },
+    {
+        "model": "recipe_manager.dishtype",
+        "pk": 2,
+        "fields": {
+            "name": "Супи"
+        }
+    },
+    {
+        "model": "recipe_manager.dishtype",
+        "pk": 3,
+        "fields": {
+            "name": "Основні страви"
+        }
+    },
+    {
+        "model": "recipe_manager.dishtype",
+        "pk": 4,
+        "fields": {
+            "name": "Десерти"
+        }
+    },
+    {
+        "model": "recipe_manager.dishtype",
+        "pk": 5,
+        "fields": {
+            "name": "Напої"
+        }
+    },
+    {
+        "model": "recipe_manager.dishtype",
+        "pk": 6,
+        "fields": {
+            "name": "Закуски"
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 1,
+        "fields": {
+            "name": "Цезар",
+            "description": "Класичний салат з куркою, сухариками та сиром пармезан.",
+            "dish_type": 1,
+            "price": 120.50
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 2,
+        "fields": {
+            "name": "Грецький салат",
+            "description": "Салат зі свіжих овочів, оливок та сиру фета.",
+            "dish_type": 1,
+            "price": 100.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 3,
+        "fields": {
+            "name": "Вінегрет",
+            "description": "Салат з буряка, картоплі та квашеної капусти.",
+            "dish_type": 1,
+            "price": 90.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 4,
+        "fields": {
+            "name": "Борщ",
+            "description": "Традиційний український суп із буряком та м’ясом.",
+            "dish_type": 2,
+            "price": 80.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 5,
+        "fields": {
+            "name": "Окрошка",
+            "description": "Суп на кефірі з овочами та ковбасою.",
+            "dish_type": 2,
+            "price": 75.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 6,
+        "fields": {
+            "name": "Крем-суп із грибів",
+            "description": "Ніжний суп-пюре з печериць.",
+            "dish_type": 2,
+            "price": 85.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 7,
+        "fields": {
+            "name": "Курка по-київськи",
+            "description": "Традиційна страва з курячого філе та масла.",
+            "dish_type": 3,
+            "price": 150.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 8,
+        "fields": {
+            "name": "Деруни",
+            "description": "Смажені картопляні оладки.",
+            "dish_type": 3,
+            "price": 70.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 9,
+        "fields": {
+            "name": "Бігус",
+            "description": "Капуста з м’ясом, тушкована у власному соку.",
+            "dish_type": 3,
+            "price": 95.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 10,
+        "fields": {
+            "name": "Тірамісу",
+            "description": "Італійський десерт з маскарпоне, кавою та печивом.",
+            "dish_type": 4,
+            "price": 120.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 11,
+        "fields": {
+            "name": "Шоколадний мус",
+            "description": "Ніжний шоколадний десерт.",
+            "dish_type": 4,
+            "price": 110.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 12,
+        "fields": {
+            "name": "Фруктовий салат",
+            "description": "Салат з сезонних фруктів.",
+            "dish_type": 4,
+            "price": 90.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 13,
+        "fields": {
+            "name": "Лимонад",
+            "description": "Освіжаючий напій з лимонів.",
+            "dish_type": 5,
+            "price": 40.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 14,
+        "fields": {
+            "name": "Морс",
+            "description": "Вітамінний напій з ягід.",
+            "dish_type": 5,
+            "price": 35.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 15,
+        "fields": {
+            "name": "Чай",
+            "description": "Теплий напій на травах.",
+            "dish_type": 5,
+            "price": 25.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 16,
+        "fields": {
+            "name": "Картопляні чіпси",
+            "description": "Хрусткі картопляні чіпси.",
+            "dish_type": 6,
+            "price": 50.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 17,
+        "fields": {
+            "name": "Хумус",
+            "description": "Паста з нуту, оливкової олії та спецій.",
+            "dish_type": 6,
+            "price": 70.00
+        }
+    },
+    {
+        "model": "recipe_manager.dish",
+        "pk": 18,
+        "fields": {
+            "name": "Кебаб",
+            "description": "М'ясо на грилі на шампурах.",
+            "dish_type": 6,
+            "price": 95.00
+        }
+    },
+    {
+        "model": "accounts.cookuser",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$passwordhash1",
+            "username": "chef_john",
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "chef_john@example.com",
+            "years_of_experience": 5
+        }
+    },
+    {
+        "model": "accounts.cookuser",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$passwordhash2",
+            "username": "chef_emma",
+            "first_name": "Emma",
+            "last_name": "Smith",
+            "email": "chef_emma@example.com",
+            "years_of_experience": 8
+        }
+    },
+    {
+        "model": "accounts.cookuser",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$passwordhash3",
+            "username": "chef_liam",
+            "first_name": "Liam",
+            "last_name": "Brown",
+            "email": "chef_liam@example.com",
+            "years_of_experience": 10
+        }
+    },
+    {
+        "model": "accounts.cookuser",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$passwordhash4",
+            "username": "chef_olivia",
+            "first_name": "Olivia",
+            "last_name": "Jones",
+            "email": "chef_olivia@example.com",
+            "years_of_experience": 6
+        }
+    },
+    {
+        "model": "accounts.cookuser",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$passwordhash5",
+            "username": "chef_noah",
+            "first_name": "Noah",
+            "last_name": "Taylor",
+            "email": "chef_noah@example.com",
+            "years_of_experience": 12
+        }
+    }
+]

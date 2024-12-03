@@ -6,5 +6,5 @@
 <p><strong>Email:</strong> {{ user.email }}</p>
 <p><strong>Years of Experience:</strong> {{ user.years_of_experience }}</p>
 
-<a href="#" class="btn btn-secondary">Edit Profile</a>
+<a href="{% url 'accounts:update_profile' %}" class="btn btn-secondary">Edit Profile</a>
 {% endblock %}

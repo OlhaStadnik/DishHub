@@ -13,6 +13,19 @@ from django.contrib.auth import get_user_model
 class CookUserListView(LoginRequiredMixin, generic.ListView):
     model = CookUser
     template_name = "accounts/cook_list.html"
+    queryset = CookUser.objects.all().prefetch_related("dishes")
+
+    # def get_context_data(self, object_list=None, **kwargs):
+    #     context = super(CookUserListView, self).get_context_data(**kwargs)
+    #     username = self.request.GET.get("username")
+    #     context["search_form"] = CookUserSearchForm(initial={"username": username})
+    #     return context
+    #
+    # def get_queryset(self):
+    #     form = CookUserSearchForm(self.request.GET)
+    #     if form.is_valid():
+    #         return self.queryset.filter(username__icontains=form.cleaned_data["username"])
+    #     return self.queryset
 
 class CookUserRegisterView(CreateView):
     model = CookUser
@@ -26,13 +39,21 @@ class CookUserRegisterView(CreateView):
         return super().form_valid(form)
 
 
+class CookUserProfileView(LoginRequiredMixin, generic.DetailView):
+    model = CookUser
+    template_name = "accounts/profile.html"
+    context_object_name = "user"
+
+    def get_object(self, queryset = None):
+        return self.request.user
+
 class CookUserUpdateView(LoginRequiredMixin, UpdateView):
     model = CookUser
     fields = ["username", "email", "years_of_experience"]
     template_name = "accounts/update_profile.html"
-    success_url = reverse_lazy("profile")
+    success_url = reverse_lazy("accounts:profile")
 
-    def get_object(self):
+    def get_object(self, queryset = None):
         return self.request.user
 
 class CookUserDetailView(LoginRequiredMixin, generic.DetailView):

@@ -41,7 +41,7 @@
           <td>
             <ul>
             {% for cook in dish.cooks.all %}
-              <li><a href="{% url 'accounts:profile' cook.id %}">{{ cook.username }}</a></li>
+              <li><a href="{% url 'accounts:profile' %}">{{ cook.username }}</a></li>
             {% endfor %}
             </ul>
           </td>

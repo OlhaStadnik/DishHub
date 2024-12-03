@@ -16,3 +16,11 @@ class RegisterForm(UserCreationForm):
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
 
+
+# class CookUserSearchForm(forms.Form):
+#     username = forms.CharField(max_length=255,
+#                                required=False,
+#                                label="",
+#                                widget=forms.TextInput(
+#                                    attrs={'placeholder': 'Search by username'}
+#                                ))

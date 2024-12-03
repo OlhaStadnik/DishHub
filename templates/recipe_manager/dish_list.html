@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <h1>
+    Список типів страв
+    <a href="{% url 'recipe_manager:dish-type-create' %}"
+       class="btn btn-primary link-to-page">
+      Створити
+    </a>
+  </h1>
+{#  <form method="get" action="" class="form-inline">#}
+{#    {{ search_form|crispy }}#}
+{#    <input class="btn btn-secondary" type="submit" value="🔎">#}
+{#  </form>#}
+
+  {% if dishes %}
+    <table class="table">
+      <tr>
+        <th>Страва</th>
+        <th>Тип страви</th>
+        <th>Опис</th>
+        <th>Ціна</th>
+        <th>Кухар</th>
+      </tr>
+
+      {% for dish in dishes %}
+        <tr>
+          <td>
+            <a href="{% url 'recipe_manager:dish-detail' pk=dish.id %}"> {{ dish.name }} </a>
+          </td>
+          <td>
+            {{ dish.dish_type.name }}
+          </td>
+          <td>
+            {{ dish.description }}
+          </td>
+          <td>
+            {{ dish.price }}
+          </td>
+          <td>
+            {{ dish.cooks}}
+          </td>
+          <td>
+            <a href="{% url 'recipe_manager:dish-update' pk=dish.id %}">
+              Оновити
+            </a>
+          </td>
+          <td>
+            <a style="color: red"
+               href="{% url 'recipe_manager:dish-delete' pk=dish.id %}">
+              Видалити
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% else %}
+    <p>Наразі немає типів страв у системі.</p>
+  {% endif %}
+{% endblock %}

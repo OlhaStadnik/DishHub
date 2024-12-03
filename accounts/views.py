@@ -9,16 +9,16 @@ from .forms import RegisterForm
 from .models import CookUser
 
 
-class CookUserRegisterView(FormView):
+class CookUserRegisterView(CreateView):
     model = CookUser
     form_class = RegisterForm
     template_name = "accounts/register.html"
     success_url = reverse_lazy("recipe_manager:home")
 
-    # def form_valid(self, form):
-    #     user = form.save()
-    #     login(self.request, user)
-    #     return super().form_valid(form)
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return super().form_valid(form)
 
 
 class CookUserUpdateView(LoginRequiredMixin, UpdateView):

@@ -16,6 +16,12 @@ class RegisterForm(UserCreationForm):
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
 
+    def clean_years_of_experience(self):
+        years = self.cleaned_data.get('years_of_experience')
+        if years is not None and years < 0:
+            raise forms.ValidationError("Years of experience cannot be negative")
+        return years
+
 
 # class CookUserSearchForm(forms.Form):
 #     username = forms.CharField(max_length=255,

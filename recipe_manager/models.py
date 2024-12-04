@@ -18,4 +18,4 @@ class Dish(models.Model):
 
     def __str__(self):
         return (f"{self.dish_type}: "
-                f"{self.name}( {self.price}) {self.description} - {self.cooks.name}") #self.name
+                f"{self.name} (${self.price}) {self.description} {self.cooks.name}")

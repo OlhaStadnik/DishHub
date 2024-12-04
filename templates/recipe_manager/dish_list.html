@@ -13,7 +13,10 @@
 {#    {{ search_form|crispy }}#}
 {#    <input class="btn btn-secondary" type="submit" value="🔎">#}
 {#  </form>#}
-
+  <form method="get" action="" class="form-inline">
+        {{ search_form|crispy }}
+        <input class="btn btn-secondary" type="submit" value="🔎">
+      </form>
   {% if dishes %}
     <table class="table">
       <tr>
@@ -23,6 +26,7 @@
         <th>Ціна</th>
         <th>Кухар</th>
       </tr>
+      
 
       {% for dish in dishes %}
         <tr>

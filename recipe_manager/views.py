@@ -4,7 +4,8 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import View
 
-from recipe_manager.forms import DishCreateForm
+from recipe_manager.forms import DishCreateForm, DishSearchForm, \
+    DishTypeSearchForm
 from recipe_manager.models import DishType, Dish
 
 class HomeView(generic.TemplateView):
@@ -17,6 +18,19 @@ class DishTypeListView(generic.ListView):
     context_object_name = "dish_types"
     queryset = DishType.objects.all()
     paginate_by = 6
+
+    def get_context_data(self, object_list=None, **kwargs):
+        context = super(DishTypeListView, self).get_context_data(**kwargs)
+        name = self.request.GET.get("name", "")
+        context["search_form"] = DishTypeSearchForm(initial={"name": name})
+        return context
+
+    def get_queryset(self):
+        queryset = DishType.objects.all()
+        form = DishTypeSearchForm(self.request.GET)
+        if form.is_valid():
+            return queryset.filter(name__icontains=form.cleaned_data["name"])
+        return self.queryset
 
 class DishTypeDetailView(generic.DetailView):
     model = DishType
@@ -47,6 +61,18 @@ class DishListView(generic.ListView):
     context_object_name = "dishes"
     queryset = Dish.objects.all().prefetch_related("cooks")
     paginate_by = 5
+
+    def get_context_data(self, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        name = self.request.GET.get("name", "")
+        context["search_form"] = DishSearchForm(initial={"name": name})
+        return context
+
+    def get_queryset(self):
+        form = DishSearchForm(self.request.GET)
+        if form.is_valid():
+            return self.queryset.filter(name__icontains=form.cleaned_data["name"])
+        return self.queryset
 
 
 class DishDetailView(generic.DetailView):

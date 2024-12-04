@@ -1,6 +1,6 @@
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import LoginView, LogoutView
+
 from django.views import generic
 from django.views.generic import FormView, CreateView, UpdateView, DetailView
 
@@ -14,18 +14,6 @@ class CookUserListView(LoginRequiredMixin, generic.ListView):
     model = CookUser
     template_name = "accounts/cook_list.html"
     queryset = CookUser.objects.all().prefetch_related("dishes")
-
-    # def get_context_data(self, object_list=None, **kwargs):
-    #     context = super(CookUserListView, self).get_context_data(**kwargs)
-    #     username = self.request.GET.get("username")
-    #     context["search_form"] = CookUserSearchForm(initial={"username": username})
-    #     return context
-    #
-    # def get_queryset(self):
-    #     form = CookUserSearchForm(self.request.GET)
-    #     if form.is_valid():
-    #         return self.queryset.filter(username__icontains=form.cleaned_data["username"])
-    #     return self.queryset
 
 class CookUserRegisterView(CreateView):
     model = CookUser

@@ -15,6 +15,7 @@ class CookUserListView(LoginRequiredMixin, generic.ListView):
     template_name = "accounts/cook_list.html"
     queryset = CookUser.objects.all().prefetch_related("dishes")
 
+
 class CookUserRegisterView(CreateView):
     model = CookUser
     form_class = RegisterForm
@@ -32,8 +33,9 @@ class CookUserProfileView(LoginRequiredMixin, generic.DetailView):
     template_name = "accounts/profile.html"
     context_object_name = "user"
 
-    def get_object(self, queryset = None):
+    def get_object(self, queryset=None):
         return self.request.user
+
 
 class CookUserUpdateView(LoginRequiredMixin, UpdateView):
     model = CookUser
@@ -41,12 +43,12 @@ class CookUserUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "accounts/update_profile.html"
     success_url = reverse_lazy("accounts:profile")
 
-    def get_object(self, queryset = None):
+    def get_object(self, queryset=None):
         return self.request.user
+
 
 class CookUserDetailView(LoginRequiredMixin, generic.DetailView):
     model = get_user_model()
     template_name = "accounts/profile.html"
     context_object_name = "user"
     # queryset = CookUser.objects.prefetch_related("dishes") # список страв
-

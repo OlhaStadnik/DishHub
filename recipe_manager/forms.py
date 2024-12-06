@@ -7,7 +7,7 @@ class DishCreateForm(forms.ModelForm):
     dish_type = forms.ModelChoiceField(
         queryset=DishType.objects.all(),
         widget=forms.Select,
-        required=False #?
+        required=False  # ?
     )
     cooks = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
@@ -30,6 +30,7 @@ class DishSearchForm(forms.Form):
             }
         ),
     )
+
 
 class DishTypeSearchForm(forms.Form):
     name = forms.CharField(

@@ -15,9 +15,3 @@ class DishAdmin(admin.ModelAdmin):
     list_display = ['name', 'price', 'dish_type']
     list_filter = ['dish_type']
     search_fields = ['name', 'dish_type__name']
-
-
-
-
-
-

@@ -1,8 +1,6 @@
-import os
-
 from .base import *
 
-print(os.environ.get('POSTGRES_HOST'))
+# print(os.environ.get('POSTGRES_HOST'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -10,10 +8,6 @@ ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-   ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-
 
 DATABASES = {
     "default": {
@@ -23,10 +17,10 @@ DATABASES = {
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'HOST': os.environ.get('POSTGRES_HOST'),
         'PORT': int(os.environ.get('POSTGRES_PORT', '5432')),
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
     }
 }
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+   ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 

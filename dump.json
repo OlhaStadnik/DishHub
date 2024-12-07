@@ -1,0 +1,418 @@
+[
+{
+    "model": "accounts.cookuser",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$passwordhash1",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "John",
+        "last_name": "Doe",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-03T17:13:42.238Z",
+        "years_of_experience": 5,
+        "username": "chef_john",
+        "email": "chef_john@example.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.cookuser",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$passwordhash2",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Emma",
+        "last_name": "Smith",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-03T17:13:42.239Z",
+        "years_of_experience": 8,
+        "username": "chef_emma",
+        "email": "chef_emma@example.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.cookuser",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$passwordhash3",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Liam",
+        "last_name": "Brown",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-03T17:13:42.240Z",
+        "years_of_experience": 10,
+        "username": "chef_liam",
+        "email": "chef_liam@example.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.cookuser",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$passwordhash4",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Olivia",
+        "last_name": "Jones",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-03T17:13:42.240Z",
+        "years_of_experience": 6,
+        "username": "chef_olivia",
+        "email": "chef_olivia@example.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.cookuser",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$passwordhash5",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Noah",
+        "last_name": "Taylor",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-03T17:13:42.240Z",
+        "years_of_experience": 12,
+        "username": "chef_noah",
+        "email": "chef_noah@example.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.cookuser",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$HpymAxiRoQ8vFMX0goQEer$0A/fTJ9mUByrls8fskJ6tSyhbFIklhfe9LwEgGkLQE8=",
+        "last_login": "2024-12-04T12:58:15.883Z",
+        "is_superuser": true,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-12-03T17:15:05.288Z",
+        "years_of_experience": 100,
+        "username": "admin",
+        "email": "admin@a.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.cookuser",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$Mwa9DfMUCB9pLwFn5ILJGL$ScTxnEvqg+ZmOOWWAq74FB0fVmE0T9+x/7KkDXcmkUg=",
+        "last_login": "2024-12-03T18:28:59.902Z",
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-03T18:28:58.421Z",
+        "years_of_experience": 4,
+        "username": "goshacook",
+        "email": "goshacook@a.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.cookuser",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$GCNTDDxZunLUJzZc7my37O$tk5dt+yTPngzKGmp4HMjiLepXCO630C6ZSGEyPoFBhM=",
+        "last_login": "2024-12-03T18:31:00.026Z",
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-03T18:30:58.663Z",
+        "years_of_experience": 7,
+        "username": "goshacook2",
+        "email": "goshacookk@a.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "recipe_manager.dishtype",
+    "pk": 1,
+    "fields": {
+        "name": "Салати"
+    }
+},
+{
+    "model": "recipe_manager.dishtype",
+    "pk": 2,
+    "fields": {
+        "name": "Супи"
+    }
+},
+{
+    "model": "recipe_manager.dishtype",
+    "pk": 3,
+    "fields": {
+        "name": "Основні страви"
+    }
+},
+{
+    "model": "recipe_manager.dishtype",
+    "pk": 4,
+    "fields": {
+        "name": "Десерти"
+    }
+},
+{
+    "model": "recipe_manager.dishtype",
+    "pk": 5,
+    "fields": {
+        "name": "Напої"
+    }
+},
+{
+    "model": "recipe_manager.dishtype",
+    "pk": 6,
+    "fields": {
+        "name": "Закуски"
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 1,
+    "fields": {
+        "name": "Цезар",
+        "description": "Класичний салат з куркою, сухариками та сиром пармезан.",
+        "price": "120.50",
+        "dish_type": 1,
+        "cooks": [
+            2,
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 2,
+    "fields": {
+        "name": "Грецький салат",
+        "description": "Салат зі свіжих овочів, оливок та сиру фета.",
+        "price": "100.00",
+        "dish_type": 1,
+        "cooks": [
+            3,
+            5,
+            4
+        ]
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 3,
+    "fields": {
+        "name": "Вінегрет",
+        "description": "Салат з буряка, картоплі та квашеної капусти.",
+        "price": "90.00",
+        "dish_type": 1,
+        "cooks": [
+            3,
+            5
+        ]
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 4,
+    "fields": {
+        "name": "Борщ",
+        "description": "Традиційний український суп із буряком та м’ясом.",
+        "price": "80.00",
+        "dish_type": 2,
+        "cooks": [
+            5,
+            4
+        ]
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 5,
+    "fields": {
+        "name": "Окрошка",
+        "description": "Суп на кефірі з овочами та ковбасою.",
+        "price": "75.00",
+        "dish_type": 2,
+        "cooks": [
+            5
+        ]
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 6,
+    "fields": {
+        "name": "Крем-суп із грибів",
+        "description": "Ніжний суп-пюре з печериць.",
+        "price": "85.00",
+        "dish_type": 2,
+        "cooks": [
+            5
+        ]
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 7,
+    "fields": {
+        "name": "Курка по-київськи",
+        "description": "Традиційна страва з курячого філе та масла.",
+        "price": "150.00",
+        "dish_type": 3,
+        "cooks": [
+            1,
+            4
+        ]
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 8,
+    "fields": {
+        "name": "Деруни",
+        "description": "Смажені картопляні оладки.",
+        "price": "70.00",
+        "dish_type": 3,
+        "cooks": [
+            2,
+            5
+        ]
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 9,
+    "fields": {
+        "name": "Бігус",
+        "description": "Капуста з м’ясом, тушкована у власному соку.",
+        "price": "95.00",
+        "dish_type": 3,
+        "cooks": []
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 10,
+    "fields": {
+        "name": "Тірамісу",
+        "description": "Італійський десерт з маскарпоне, кавою та печивом.",
+        "price": "120.00",
+        "dish_type": 4,
+        "cooks": []
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 11,
+    "fields": {
+        "name": "Шоколадний мус",
+        "description": "Ніжний шоколадний десерт.",
+        "price": "110.00",
+        "dish_type": 4,
+        "cooks": []
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 12,
+    "fields": {
+        "name": "Фруктовий салат",
+        "description": "Салат з сезонних фруктів.",
+        "price": "90.00",
+        "dish_type": 4,
+        "cooks": []
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 13,
+    "fields": {
+        "name": "Лимонад",
+        "description": "Освіжаючий напій з лимонів.",
+        "price": "40.00",
+        "dish_type": 5,
+        "cooks": []
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 14,
+    "fields": {
+        "name": "Морс",
+        "description": "Вітамінний напій з ягід.",
+        "price": "35.00",
+        "dish_type": 5,
+        "cooks": []
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 15,
+    "fields": {
+        "name": "Чай",
+        "description": "Теплий напій на травах.",
+        "price": "25.00",
+        "dish_type": 5,
+        "cooks": []
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 16,
+    "fields": {
+        "name": "Картопляні чіпси",
+        "description": "Хрусткі картопляні чіпси.",
+        "price": "50.00",
+        "dish_type": 6,
+        "cooks": []
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 17,
+    "fields": {
+        "name": "Хумус",
+        "description": "Паста з нуту, оливкової олії та спецій.",
+        "price": "70.00",
+        "dish_type": 6,
+        "cooks": []
+    }
+},
+{
+    "model": "recipe_manager.dish",
+    "pk": 18,
+    "fields": {
+        "name": "Кебаб",
+        "description": "М'ясо на грилі на шампурах.",
+        "price": "95.00",
+        "dish_type": 6,
+        "cooks": []
+    }
+}
+]

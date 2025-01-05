@@ -23,8 +23,7 @@ load_dotenv(BASE_DIR / ".env")
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY",
-                            "django-insecure-$k)x2t2ao8ah$$dblt57fs51#d$fajm(n2c*cg#%s_@-t6&@-%")
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # Application definition
 

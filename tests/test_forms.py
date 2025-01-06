@@ -4,6 +4,7 @@ from recipe_manager.forms import DishCreateForm, DishSearchForm, DishTypeSearchF
 from recipe_manager.models import DishType, Dish
 from accounts.forms import RegisterForm
 
+
 class DishCreateFormTests(TestCase):
     def setUp(self):
         self.dish_type = DishType.objects.create(name="Main Course")
@@ -11,7 +12,7 @@ class DishCreateFormTests(TestCase):
             username="testcook",
             password="testpass123",
             email="test@test.com",
-            years_of_experience=3
+            years_of_experience=3,
         )
 
     def test_dish_create_form_valid_data(self):
@@ -20,7 +21,7 @@ class DishCreateFormTests(TestCase):
             "description": "Test Description",
             "price": "10.99",
             "dish_type": self.dish_type.id,
-            "cooks": [self.user.id]
+            "cooks": [self.user.id],
         }
         form = DishCreateForm(data=form_data)
         self.assertTrue(form.is_valid())
@@ -28,7 +29,9 @@ class DishCreateFormTests(TestCase):
     def test_dish_create_form_no_data(self):
         form = DishCreateForm(data={})
         self.assertFalse(form.is_valid())
-        self.assertEqual(len(form.errors), 3)  # name, description, price є обов'язковими
+        self.assertEqual(
+            len(form.errors), 3
+        )  # name, description, price є обов'язковими
 
     def test_dish_create_form_optional_fields(self):
         form_data = {
@@ -64,7 +67,7 @@ class RegisterFormTests(TestCase):
             "email": "test@test.com",
             "years_of_experience": 5,
             "password1": "testpass123",
-            "password2": "testpass123"
+            "password2": "testpass123",
         }
         form = RegisterForm(data=form_data)
         self.assertTrue(form.is_valid())
@@ -75,11 +78,11 @@ class RegisterFormTests(TestCase):
             "email": "test@test.com",
             "years_of_experience": 5,
             "password1": "testpass123",
-            "password2": "testpass456"
+            "password2": "testpass456",
         }
         form = RegisterForm(data=form_data)
         self.assertFalse(form.is_valid())
-        self.assertIn('password2', form.errors)
+        self.assertIn("password2", form.errors)
 
     def test_register_form_invalid_email(self):
         form_data = {
@@ -87,9 +90,8 @@ class RegisterFormTests(TestCase):
             "email": "invalid-email",
             "years_of_experience": 5,
             "password1": "testpass123",
-            "password2": "testpass123"
+            "password2": "testpass123",
         }
         form = RegisterForm(data=form_data)
         self.assertFalse(form.is_valid())
-        self.assertIn('email', form.errors)
-
+        self.assertIn("email", form.errors)

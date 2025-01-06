@@ -4,8 +4,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import View
 
-from recipe_manager.forms import DishCreateForm, DishSearchForm, \
-    DishTypeSearchForm
+from recipe_manager.forms import DishCreateForm, DishSearchForm, DishTypeSearchForm
 from recipe_manager.models import DishType, Dish
 
 
@@ -77,8 +76,7 @@ class DishListView(generic.ListView):
     def get_queryset(self):
         form = DishSearchForm(self.request.GET)
         if form.is_valid():
-            return self.queryset.filter(
-                name__icontains=form.cleaned_data["name"])
+            return self.queryset.filter(name__icontains=form.cleaned_data["name"])
         return self.queryset
 
 

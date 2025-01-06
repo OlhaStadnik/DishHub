@@ -8,8 +8,7 @@ class DishTypeViewsTest(TestCase):
     def setUp(self):
         self.client = Client()
         self.user = CookUser.objects.create_user(
-            username="testuser",
-            password="testpass123"
+            username="testuser", password="testpass123"
         )
         self.dish_type = DishType.objects.create(name="Тестова категорія")
 
@@ -21,42 +20,37 @@ class DishTypeViewsTest(TestCase):
     def test_dish_type_search(self):
         DishType.objects.create(name="Інша категорія")
         response = self.client.get(
-            reverse("recipe_manager:dish-type-list"),
-            {"name": "Тестова"}
+            reverse("recipe_manager:dish-type-list"), {"name": "Тестова"}
         )
         self.assertEqual(len(response.context["dish_types"]), 1)
 
     def test_dish_type_create_view(self):
         # Неавторизований користувач не може створювати
         response = self.client.post(
-            reverse("recipe_manager:dish-type-create"),
-            {"name": "Нова категорія"}
+            reverse("recipe_manager:dish-type-create"), {"name": "Нова категорія"}
         )
         self.assertEqual(response.status_code, 302)  # Редірект на логін
 
         # Авторизований користувач може створювати
         self.client.login(username="testuser", password="testpass123")
         response = self.client.post(
-            reverse("recipe_manager:dish-type-create"),
-            {"name": "Нова категорія"}
+            reverse("recipe_manager:dish-type-create"), {"name": "Нова категорія"}
         )
-        self.assertTrue(
-            DishType.objects.filter(name="Нова категорія").exists())
+        self.assertTrue(DishType.objects.filter(name="Нова категорія").exists())
 
 
 class DishViewsTest(TestCase):
     def setUp(self):
         self.client = Client()
         self.user = CookUser.objects.create_user(
-            username="testuser",
-            password="testpass123"
+            username="testuser", password="testpass123"
         )
         self.dish_type = DishType.objects.create(name="Тестова категорія")
         self.dish = Dish.objects.create(
             name="Тестова страва",
             description="Опис",
             dish_type=self.dish_type,
-            price=100.00
+            price=100.00,
         )
 
     def test_dish_list_view(self):
@@ -69,11 +63,10 @@ class DishViewsTest(TestCase):
             name="Інша страва",
             description="Опис",
             dish_type=self.dish_type,
-            price=150.00
+            price=150.00,
         )
         response = self.client.get(
-            reverse("recipe_manager:dish-list"),
-            {"name": "Тестова"}
+            reverse("recipe_manager:dish-list"), {"name": "Тестова"}
         )
         self.assertEqual(len(response.context["dishes"]), 1)
 
@@ -84,11 +77,10 @@ class DishViewsTest(TestCase):
             "description": "Новий опис",
             "dish_type": self.dish_type.id,
             "price": 200.00,
-            "cooks": [self.user.id]
+            "cooks": [self.user.id],
         }
         response = self.client.post(
-            reverse("recipe_manager:dish-create"),
-            new_dish_data
+            reverse("recipe_manager:dish-create"), new_dish_data
         )
         self.assertEqual(response.status_code, 302)
         self.assertTrue(Dish.objects.filter(name="Нова страва").exists())

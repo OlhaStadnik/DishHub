@@ -23,5 +23,4 @@ urlpatterns = [
     path("", include("recipe_manager.urls", namespace="recipe_manager")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/", include("accounts.urls", namespace="accounts")),
-
 ]

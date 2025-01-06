@@ -8,7 +8,7 @@ class CookUser(AbstractUser):
     email = models.EmailField(max_length=70, unique=True)
 
     class Meta:
-        ordering = ['username']
+        ordering = ["username"]
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

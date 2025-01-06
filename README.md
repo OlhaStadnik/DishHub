@@ -27,7 +27,7 @@ A Django-based web application for managing recipes, dishes, and cooks. This sys
 - Django 5.1.3
 - Bootstrap 4
 - Crispy Forms
-- SQLite3
+- PostgresSQL
 
 ## Installation
 

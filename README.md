@@ -49,8 +49,17 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
+4. Set up environment variables:
 
-4. Apply migrations:
+Create a .env file in the root directory of the project.
+Use the provided .env.sample as a template. Copy .env.sample to .env
+Fill in the necessary values in the .env file, such as database credentials, 
+Django settings, and any third-party API keys.
+```bash
+cp .env.sample .env
+```
+
+5. Apply migrations:
 
 ```bash
 python manage.py migrate

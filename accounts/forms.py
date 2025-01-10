@@ -18,7 +18,6 @@ class RegisterForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Додаємо клас Bootstrap до всіх полів
         for field in self.fields.values():
             field.widget.attrs["class"] = "form-control"
 
@@ -27,12 +26,3 @@ class RegisterForm(UserCreationForm):
         if years is not None and years < 0:
             raise forms.ValidationError("Years of experience cannot be negative")
         return years
-
-
-# class CookUserSearchForm(forms.Form):
-#     username = forms.CharField(max_length=255,
-#                                required=False,
-#                                label="",
-#                                widget=forms.TextInput(
-#                                    attrs={'placeholder': 'Search by username'}
-#                                ))

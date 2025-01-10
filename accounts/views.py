@@ -51,4 +51,3 @@ class CookUserDetailView(LoginRequiredMixin, generic.DetailView):
     model = get_user_model()
     template_name = "accounts/profile.html"
     context_object_name = "user"
-    # queryset = CookUser.objects.prefetch_related("dishes") # список страв

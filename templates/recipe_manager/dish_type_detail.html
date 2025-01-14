@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Dish Type: {{ dish_type.name }}</h1>
+  {% if dish_type.dishes.all %}
+    <h2>Dishes:</h2>
+    <ul>
+      {% for dish in dish_type.dishes.all %}
+        <li>
+          <a href="{% url 'recipe_manager:dish-detail' dish.pk %}">{{ dish.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No dishes found for this dish type.</p>
+  {% endif %}
+
+  <a href="{% url 'recipe_manager:dish-type-update' dish_type.pk %}" class="btn btn-primary">Update</a>
+  <a href="{% url 'recipe_manager:dish-type-delete' dish_type.pk %}" class="btn btn-danger">Delete</a>
+{% endblock %}

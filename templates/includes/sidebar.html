@@ -1,0 +1,19 @@
+<ul class="sidebar-nav list-group">
+  <li class="list-group-item"><a href="{% url 'recipe_manager:home' %}">Home</a></li>
+  <li class="list-group-item"><a href="{% url 'recipe_manager:dish-type-list' %}">Dish Types</a></li>
+  <li class="list-group-item"><a href="{% url 'recipe_manager:dish-list' %}">Dishes</a></li>
+  <li class="list-group-item"><a href="{% url 'accounts:cooks' %}">Cooks</a></li>
+ <li class="list-group-item">
+   <form action="{% url 'login' %}" method="POST" class="login-form">
+     {% csrf_token %}
+     <button type="submit" class="btn btn-primary">Login</button>
+   </form>
+ </li>
+  <li class="list-group-item">
+    <form action="{% url 'logout' %}" method="POST" class="logout-form">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">Logout</button>
+    </form>
+  </li>
+  <li class="list-group-item"><a href="{% url 'accounts:register' %}">Register</a></li>
+</ul>

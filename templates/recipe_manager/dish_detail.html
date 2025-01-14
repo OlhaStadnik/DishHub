@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Dish: {{ dish.name }}</h1>
+  <p>Description: {{ dish.description }}</p>
+  <p>Type: <a href="{% url 'recipe_manager:dish-type-detail' dish.dish_type.id %}">{{ dish.dish_type.name }}</a> </p>
+  <p>Price: {{ dish.price }}</p>
+  <a href="{% url 'recipe_manager:dish-update' dish.pk %}" class="btn btn-primary">Update</a>
+  <a href="{% url 'recipe_manager:dish-delete' dish.pk %}" class="btn btn-danger">Delete</a>
+  <ul>
+    {% for cook in dish.cooks.all %}
+      <li>
+        <a href="{% url 'accounts:profile' cook.id %}"> {{ cook.id }} {{ cook.first_name }} {{ cook.last_name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

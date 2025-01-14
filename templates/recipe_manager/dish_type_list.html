@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <h1>
+    ТИПИ СТРАВ
+    <a href="{% url 'recipe_manager:dish-type-create' %}"
+       class="btn btn-primary link-to-page">
+      Створити
+    </a>
+  </h1>
+  <form method="get" action="" class="form-inline">
+    {{ search_form|crispy }}
+    <input class="btn btn-secondary" type="submit" value="🔎">
+  </form>
+
+  {% if dish_types %}
+    <table class="table">
+      <tr>
+        <th>Dish Type</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+
+      {% for dish_type in dish_types %}
+        <tr>
+          <td>
+            <a href="{% url 'recipe_manager:dish-type-detail' pk=dish_type.id %}"> {{ dish_type.name }} </a>
+          </td>
+          <td>
+            <a href="{% url 'recipe_manager:dish-type-update' pk=dish_type.id %}">
+              Оновити
+            </a>
+          </td>
+          <td>
+            <a style="color: red"
+               href="{% url 'recipe_manager:dish-type-delete' pk=dish_type.id %}">
+              Видалити
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% else %}
+    <p>Наразі немає типів страв у системі.</p>
+  {% endif %}
+{% endblock %}

@@ -15,8 +15,7 @@ class DishTypeViewsTest(TestCase):
     def test_dish_type_list_view(self):
         response = self.client.get(reverse("recipe_manager:dish-type-list"))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response,
-                                "recipe_manager/dish_type_list.html")
+        self.assertTemplateUsed(response, "recipe_manager/dish_type_list.html")
 
     def test_dish_type_search(self):
         DishType.objects.create(name="Інша категорія")
@@ -28,17 +27,19 @@ class DishTypeViewsTest(TestCase):
     def test_dish_type_create_view(self):
         response = self.client.post(
             reverse("recipe_manager:dish-type-create"),
-            {"name": "Нова категорія"}
+            {"name": "Нова категорія"},
         )
         self.assertEqual(response.status_code, 302)
 
         self.client.login(username="testuser", password="testpass123")
         response = self.client.post(
             reverse("recipe_manager:dish-type-create"),
-            {"name": "Нова категорія"}
+            {"name": "Нова категорія"},
         )
-        self.assertTrue(DishType.objects.filter(name="Нова "
-                                                     "категорія").exists())
+        self.assertTrue(
+            DishType.objects.filter(name="Нова " "категорія").exists()
+        )
+
 
 class DishViewsTest(TestCase):
     def setUp(self):
@@ -57,8 +58,7 @@ class DishViewsTest(TestCase):
     def test_dish_list_view(self):
         response = self.client.get(reverse("recipe_manager:dish-list"))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response,
-                                "recipe_manager/dish_list.html")
+        self.assertTemplateUsed(response, "recipe_manager/dish_list.html")
 
     def test_dish_search(self):
         Dish.objects.create(

@@ -22,8 +22,9 @@ class CookUserAdminTest(TestCase):
             if "years_of_experience" in fieldset[1]["fields"]:
                 found = True
                 break
-        self.assertTrue(found, "Поле 'years_of_experience' "
-                               "не знайдено у fieldsets")
+        self.assertTrue(
+            found, "Поле 'years_of_experience' " "не знайдено у fieldsets"
+        )
 
     def test_add_fieldsets(self):
         found = False
@@ -32,8 +33,7 @@ class CookUserAdminTest(TestCase):
             if set(fieldset[1]["fields"]) & expected_fields:
                 found = True
                 break
-        self.assertTrue(found, "Не знайдено необхідні поля "
-                               "у add_fieldsets")
+        self.assertTrue(found, "Не знайдено необхідні поля " "у add_fieldsets")
 
 
 class CookUserTests(TestCase):

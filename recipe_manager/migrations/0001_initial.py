@@ -47,7 +47,8 @@ class Migration(migrations.Migration):
                 (
                     "cooks",
                     models.ManyToManyField(
-                        related_name="recipe_manager", to=settings.AUTH_USER_MODEL
+                        related_name="recipe_manager",
+                        to=settings.AUTH_USER_MODEL,
                     ),
                 ),
                 (

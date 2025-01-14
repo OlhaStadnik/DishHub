@@ -4,10 +4,11 @@ from django.urls import reverse
 from django.contrib.auth import get_user_model
 from accounts.models import CookUser
 from recipe_manager.models import Dish, DishType
-from recipe_manager.forms import (DishCreateForm,
-                                  DishSearchForm,
-                                  DishTypeSearchForm
-                                  )
+from recipe_manager.forms import (
+    DishCreateForm,
+    DishSearchForm,
+    DishTypeSearchForm,
+)
 
 
 class DishModelTests(TestCase):
@@ -15,7 +16,7 @@ class DishModelTests(TestCase):
         self.cook = CookUser.objects.create_user(
             username="testcook",
             email="test@example.com",
-            password="testpass123"
+            password="testpass123",
         )
         self.dish_type = DishType.objects.create(name="Main Course")
         self.dish = Dish.objects.create(
@@ -55,9 +56,9 @@ class DishTypeViewsTest(TestCase):
     def test_dish_type_list_view(self):
         response = self.client.get(reverse("recipe_manager:dish-type-list"))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response,
-                                "recipe_manager/"
-                                "dish_type_list.html")
+        self.assertTemplateUsed(
+            response, "recipe_manager/" "dish_type_list.html"
+        )
 
     def test_dish_type_search(self):
         DishType.objects.create(name="Інша категорія")
@@ -84,8 +85,7 @@ class DishViewsTest(TestCase):
     def test_dish_list_view(self):
         response = self.client.get(reverse("recipe_manager:dish-list"))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response,
-                                "recipe_manager/dish_list.html")
+        self.assertTemplateUsed(response, "recipe_manager/dish_list.html")
 
     def test_dish_search(self):
         Dish.objects.create(

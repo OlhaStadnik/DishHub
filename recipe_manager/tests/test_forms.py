@@ -1,8 +1,13 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-from recipe_manager.forms import DishCreateForm, DishSearchForm, DishTypeSearchForm
+from recipe_manager.forms import (
+    DishCreateForm,
+    DishSearchForm,
+    DishTypeSearchForm,
+)
 from recipe_manager.models import DishType, Dish
 from accounts.forms import RegisterForm
+
 
 class DishCreateFormTests(TestCase):
     def setUp(self):
@@ -28,9 +33,7 @@ class DishCreateFormTests(TestCase):
     def test_dish_create_form_no_data(self):
         form = DishCreateForm(data={})
         self.assertFalse(form.is_valid())
-        self.assertEqual(
-            len(form.errors), 3
-        )
+        self.assertEqual(len(form.errors), 3)
 
     def test_dish_create_form_optional_fields(self):
         form_data = {

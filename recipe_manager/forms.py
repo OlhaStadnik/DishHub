@@ -5,7 +5,9 @@ from .models import DishType, Dish
 
 class DishCreateForm(forms.ModelForm):
     dish_type = forms.ModelChoiceField(
-        queryset=DishType.objects.all(), widget=forms.Select, required=False  # ?
+        queryset=DishType.objects.all(),
+        widget=forms.Select,
+        required=False,  # ?
     )
     cooks = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),

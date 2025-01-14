@@ -1,13 +1,12 @@
 from django.contrib.auth import login
 from django.contrib.auth.mixins import LoginRequiredMixin
-
 from django.views import generic
-from django.views.generic import FormView, CreateView, UpdateView, DetailView
-
+from django.views.generic import CreateView, UpdateView
 from django.urls import reverse_lazy
+from django.contrib.auth import get_user_model
+
 from .forms import RegisterForm
 from .models import CookUser
-from django.contrib.auth import get_user_model
 
 
 class CookUserListView(LoginRequiredMixin, generic.ListView):
@@ -33,7 +32,7 @@ class CookUserProfileView(LoginRequiredMixin, generic.DetailView):
     template_name = "accounts/profile.html"
     context_object_name = "user"
 
-    def get_object(self, queryset=None):
+    def get_object(self, queryset=None) -> CookUser:
         return self.request.user
 
 
@@ -43,7 +42,7 @@ class CookUserUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "accounts/update_profile.html"
     success_url = reverse_lazy("accounts:profile")
 
-    def get_object(self, queryset=None):
+    def get_object(self, queryset=None) -> CookUser:
         return self.request.user
 
 
